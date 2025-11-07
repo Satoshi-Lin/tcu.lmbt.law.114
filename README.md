@@ -1,1 +1,367 @@
-# tcu.lmbt.law.114
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>慈濟大學醫學檢驗生物技術學系系學會 法規</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* 🌿 全站基本設定 */
+    body {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: linear-gradient(180deg, #f0f6fc 0%, #ffffff 100%);
+      margin: 0;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* 🏫 Header */
+    header {
+      background: linear-gradient(to right, #004c99, #007acc);
+      color: white;
+      padding: 2em 1em 2.5em;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .logo-title img {
+      height: 90px;
+      transition: transform 0.3s ease;
+    }
+    .logo-title img:hover {
+      transform: rotate(-3deg) scale(1.05);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 0.5px;
+    }
+    header p {
+      margin-top: 0.4em;
+      font-size: 1.1em;
+      color: #cce6ff;
+    }
+
+    /* 🔘 按鈕群組 */
+    .button-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      padding: 1.5em 1em;
+      background-color: #ffffff;
+      border-bottom: 2px solid #e0e0e0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+    .button-group button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      padding: 0.7em 1.8em;
+      border-radius: 12px;
+      font-size: 1.05em;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0, 122, 204, 0.4);
+    }
+    .button-group button:hover {
+      background-color: #005fa3;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 95, 163, 0.45);
+    }
+
+    /* 📚 法規選擇區 */
+    nav {
+      background-color: #ffffff;
+      padding: 2.5em 1em;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      margin: 2em auto;
+      border-radius: 18px;
+      max-width: 720px;
+      transition: transform 0.3s ease;
+    }
+    nav:hover {
+      transform: translateY(-3px);
+    }
+    nav label {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #004c99;
+    }
+    select {
+      font-size: 1.1em;
+      padding: 0.9em 1em;
+      border-radius: 10px;
+      border: 1.5px solid #ccc;
+      width: 85%;
+      max-width: 500px;
+      margin-top: 1.2em;
+      background: #fafafa;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    select:hover {
+      border-color: #007acc;
+      box-shadow: 0 0 10px rgba(0, 122, 204, 0.25);
+    }
+
+    /* 🪟 PDF Modal + 遮罩 */
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+    }
+    #pdfModal {
+      display: none;
+      position: fixed;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 90%;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      z-index: 10000;
+      padding: 1em 1em 0.5em;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -10%); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+    #pdfModal h3 {
+      text-align: center;
+      color: #004c99;
+      margin: 0 0 0.8em;
+      font-size: 1.2em;
+    }
+    #pdfModal iframe {
+      width: 100%;
+      height: 85%;
+      border: none;
+      border-radius: 10px;
+    }
+    #pdfModal button {
+      float: right;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.5em 1.2em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    #pdfModal button:hover {
+      background-color: #c82333;
+    }
+
+    /* 📝 意見表單 */
+    .form-box {
+      background-color: #ffffff;
+      margin: 3em auto 5em;
+      padding: 2.5em;
+      max-width: 850px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .form-box h2 {
+      color: #004c99;
+      margin-bottom: 1em;
+      font-size: 1.6em;
+    }
+    .form-box button {
+      background-color: #28a745;
+      color: white;
+      padding: 0.7em 1.8em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.05em;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 12px rgba(40, 167, 69, 0.5);
+      font-weight: bold;
+    }
+    .form-box button:hover {
+      background-color: #218838;
+      transform: translateY(-2px);
+    }
+    #googleForm {
+      margin-top: 1em;
+      display: none;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    #googleForm iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+    #googleForm > div {
+      text-align: right;
+      padding: 0.5em 1em;
+      background: #f8f9fa;
+      border-top: 1px solid #ddd;
+    }
+    #googleForm > div button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.4em 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    #googleForm > div button:hover {
+      background-color: #c82333;
+    }
+
+    /* 📱 行動版調整 */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5em; }
+      select { width: 95%; font-size: 1em; }
+      .button-group button { padding: 0.6em 1.3em; font-size: 0.95em; }
+      .form-box { padding: 1.5em; }
+    }
+
+    /* ⚓ Footer */
+    footer {
+      text-align: center;
+      padding: 1.5em;
+      font-size: 0.9em;
+      color: #666;
+      background-color: #f0f0f0;
+      border-top: 1px solid #ddd;
+      border-radius: 20px 20px 0 0;
+    }
+    footer small {
+      display: block;
+      color: #888;
+      margin-top: 0.3em;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-title">
+    <img src="系學會勳章-removebg-preview.png" alt="系學會勳章" />
+    <div>
+      <h1>慈濟大學醫學檢驗生物技術學系系學會 法規</h1>
+      <p>快速查閱常用醫技系系學會相關法規文件</p>
+    </div>
+  </div>
+</header>
+
+<div class="button-group">
+  <button onclick="window.open('https://mtech.tcu.edu.tw/', '_blank')">🏠 醫技系學校官網</button>
+  <button onclick="window.open('https://www.instagram.com/tcu_._lmbt/?hl=zh-tw', '_blank')">📄 系學會IG</button>
+  <button onclick="openPDF()">⬇️ 開啟連署書</button>
+</div>
+
+<nav>
+  <label for="lawSelect"><strong>📘 選擇法規文件：</strong></label><br />
+  <select id="lawSelect" aria-label="選擇法規文件">
+    <option value="慈濟大學醫學檢驗生物技術學系系學會 組織章程.pdf">組織章程</option>
+    <option value="慈濟大學醫學檢驗生物技術學系系學會會費及會員身分條例.pdf">會費及會員身分條例</option>
+    <option value="慈濟大學醫學檢驗生物技術學系系學會  全國醫技盃交通費補助標準.pdf">全國醫技盃交通費補助標準</option>
+    <option value="慈濟大學醫學檢驗生物技術學系系學會 系學會法規標準法.pdf">系學會法規標準法</option>
+    <option value="系學會預算法.pdf">預算法</option>
+    <option value="系學會決算法.pdf">決算法</option>
+    <option value="行政中心財產借用申請書.pdf">行政中心財產借用申請書</option>
+    <option value="行政中心財產外借辦法.pdf">行政中心財產外借辦法</option>
+    <option value="司法委員會組織暨審理案件法.pdf">司法委員會組織暨審理案件法</option>
+    <option value="資訊公開法.pdf">資訊公開法</option>
+    <option value="申訴書.pdf">申訴書</option>
+    <option value="放棄會員聲明書.pdf">放棄會員聲明書</option>
+  </select>
+</nav>
+
+<div id="overlay"></div>
+<div id="pdfModal">
+  <button onclick="closeModal()">❌ 關閉</button>
+  <h3 id="pdfTitle">PDF 文件</h3>
+  <iframe id="modalViewer" title="PDF 內容"></iframe>
+</div>
+
+<div class="form-box">
+  <h2>📬 系學會法規意見回饋</h2>
+  <button onclick="toggleForm()" id="formToggleBtn">點此填寫意見表單</button>
+  <div id="googleForm">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSeulSTQ4sQB8umfgIDwBpP6tlscshx7zmbw3tjuuVjwme88RQ/viewform?embedded=true"
+      title="系學會法規意見回饋表單"
+    >載入中…</iframe>
+    <div>
+      <button onclick="toggleForm()">❌ 收起表單</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 慈濟大學醫技系系學會 ｜ 法規文件僅供本系內使用
+  <small>最後更新：2025年11月</small>
+</footer>
+
+<script>
+  const select = document.getElementById("lawSelect");
+  const modal = document.getElementById("pdfModal");
+  const overlay = document.getElementById("overlay");
+  const modalViewer = document.getElementById("modalViewer");
+  const googleForm = document.getElementById("googleForm");
+  const formToggleBtn = document.getElementById("formToggleBtn");
+
+  function openModal(pdfUrl) {
+    modal.style.display = "block";
+    overlay.style.display = "block";
+    modalViewer.src = encodeURI(pdfUrl);
+    document.getElementById("pdfTitle").textContent =
+      select.options[select.selectedIndex].text;
+  }
+
+  function closeModal() {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+    modalViewer.src = "";
+  }
+
+  overlay.addEventListener("click", closeModal);
+
+  select.addEventListener("change", () => {
+    openModal(select.value);
+  });
+
+  function openPDF() {
+    openModal("附件 連署簽名.pdf");
+  }
+
+  function toggleForm() {
+    if (googleForm.style.display === "none" || googleForm.style.display === "") {
+      googleForm.style.display = "block";
+      formToggleBtn.textContent = "收起意見表單";
+    } else {
+      googleForm.style.display = "none";
+      formToggleBtn.textContent = "點此填寫意見表單";
+    }
+  }
+</script>
+
+</body>
+</html>
